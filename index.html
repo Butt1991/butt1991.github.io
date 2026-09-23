@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hafiz Abdullah | Transmission Line Engineer</title>
+<meta name="description" content="Hafiz Abdullah, transmission line engineer with 11+ years on 132kV to ±660kV HVDC overhead lines. Based in Taif, Saudi Arabia.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#141B38; --dusk:#2B2D5E; --glass:#3FA796; --volt:#FFC21A;
+  --steel:#8C9AB0; --paper:#F3F5F8; --ink:#1A2240; --muted:#56607A; --line:#D5DBE5;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--volt);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;letter-spacing:.2px}
+h2{font-size:clamp(34px,5vw,52px);margin-bottom:14px}
+.lead{font-size:19px;color:var(--muted);max-width:62ch}
+section{padding:96px 0}
+
+/* ---------- nav ---------- */
+nav{position:absolute;top:0;left:0;right:0;z-index:5;padding-top:env(safe-area-inset-top,0px)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.mark{font-family:var(--display);font-weight:700;font-size:22px;color:#fff;text-decoration:none;display:flex;gap:10px;align-items:center}
+.mark span{width:30px;height:30px;border:2px solid var(--volt);border-radius:50%;display:grid;place-items:center;font-size:14px;color:var(--volt)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{color:#D9DEEA;text-decoration:none;font-weight:500;font-size:15px}
+nav ul a:hover{color:#fff}
+@media(max-width:640px){nav ul li:not(:last-child){display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;min-height:100vh;background:var(--night);color:#fff;overflow:hidden;display:flex;align-items:flex-start;padding:0}
+.hero svg.scene{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:2;padding-top:calc(130px + env(safe-area-inset-top,0px))}
+.hero h1{font-size:clamp(56px,11vw,132px);font-weight:700;line-height:.9}
+.hero .role{font-family:var(--display);font-size:clamp(24px,3.4vw,36px);font-weight:500;color:var(--volt);margin-top:10px}
+.hero p.intro{font-size:clamp(17px,2vw,20px);max-width:44ch;color:#DCE1EE;margin-top:18px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;transition:transform .15s,background .15s}
+.btn svg{width:18px;height:18px}
+.btn.primary{background:var(--volt);color:var(--night)}
+.btn.primary:hover{transform:translateY(-2px)}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.45);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.flow{fill:none;stroke:var(--volt);stroke-linecap:round;filter:drop-shadow(0 0 4px var(--volt));animation:run linear infinite}
+@keyframes run{to{stroke-dashoffset:-1000}}
+.scroll-hint{position:absolute;bottom:calc(22px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:2;color:#C7CDDC;font-size:13px;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-hint i{width:2px;height:28px;background:linear-gradient(var(--volt),transparent)}
+
+/* ---------- voltage ladder ---------- */
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);align-items:end;gap:18px;margin-top:48px;border-bottom:3px solid var(--ink);padding-bottom:0}
+.rung{display:flex;flex-direction:column;align-items:center}
+.rung svg{width:auto;color:var(--ink)}
+.rung .kv{font-family:var(--display);font-weight:700;font-size:clamp(26px,3.6vw,40px);margin-top:10px}
+.rung.hvdc .kv{color:#B98500}
+.ladder-notes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:14px}
+.ladder-notes p{font-size:15px;color:var(--muted);text-align:center}
+@media(max-width:700px){
+  .ladder,.ladder-notes{gap:8px}
+  .ladder-notes p{font-size:13px}
+}
+
+/* ---------- HVDC project ---------- */
+.project{background:var(--night);color:#fff}
+.project .lead{color:#C4CADB}
+.proj-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:56px;margin-top:48px;align-items:start}
+.route text{font-family:var(--body);font-size:14px;fill:#DCE1EE}
+.route .city{font-family:var(--display);font-size:22px;font-weight:600;fill:#fff}
+.plate{background:linear-gradient(160deg,#C9D1DE,#9AA6B8);color:#16203B;border-radius:6px;padding:26px 28px 22px;position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 18px 40px rgba(0,0,0,.35)}
+.plate::before,.plate::after,.plate i::before,.plate i::after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#EEF1F6,#6F7C92)}
+.plate::before{top:10px;left:10px}.plate::after{top:10px;right:10px}
+.plate i::before{bottom:10px;left:10px}.plate i::after{bottom:10px;right:10px}
+.plate h3{font-size:24px;border-bottom:2px solid #16203B;padding-bottom:10px;margin-bottom:6px}
+.plate dl{display:grid;grid-template-columns:auto 1fr;column-gap:0}
+.plate dt,.plate dd{padding:6px 0;min-height:46px;display:flex;align-items:center;border-bottom:1px solid rgba(22,32,59,.25)}
+.plate dt{font-size:15px}
+.plate dt{padding-right:24px}.plate dd{font-family:var(--display);font-weight:700;font-size:22px;justify-content:flex-end;text-align:right;white-space:nowrap}
+.plate dl > :nth-last-child(-n+2){border-bottom:0}
+.did{margin-top:36px}
+.did h3{font-size:26px;margin-bottom:12px}
+.did ul{list-style:none;display:grid;gap:12px}
+.did li{padding-left:30px;position:relative;color:#DCE1EE}
+.did li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:12px;border-radius:50%;background:var(--glass);box-shadow:0 0 0 4px rgba(63,167,150,.25)}
+@media(max-width:820px){.proj-grid{grid-template-columns:1fr;gap:36px}.route{max-width:280px;margin-inline:auto}}
+
+/* ---------- OHTL cycle ---------- */
+.steps{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:52px;position:relative;counter-reset:s}
+.steps::before{content:"";position:absolute;left:8%;right:8%;top:44px;border-top:2px dashed var(--steel)}
+.steps li{text-align:center;padding:0 8px;position:relative;counter-increment:s}
+.steps .ic{width:88px;height:88px;margin:0 auto;border-radius:50%;background:#fff;border:2px solid var(--ink);display:grid;place-items:center;position:relative}
+.steps .ic svg{width:48px;height:48px}
+.steps .ic::after{content:counter(s);position:absolute;top:-4px;right:-4px;width:26px;height:26px;border-radius:50%;background:var(--volt);font-family:var(--display);font-weight:700;font-size:15px;display:grid;place-items:center}
+.steps h3{font-size:21px;margin-top:14px}
+.steps p{font-size:14.5px;color:var(--muted);margin-top:4px}
+@media(max-width:860px){
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:36px}
+  .steps::before{display:none}
+}
+
+/* ---------- career ---------- */
+.career{background:#fff}
+.phase{margin-top:56px}
+.phase > h3{font-size:26px;display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.phase > h3 small{font-family:var(--body);font-size:15px;color:var(--muted);font-weight:500}
+.rail{position:relative;padding-left:44px}
+.rail::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;background:var(--steel);border-radius:2px}
+.job{position:relative;padding:22px 0 26px;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:0}
+.job .node{position:absolute;left:-44px;top:26px;width:30px;height:30px}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;align-items:baseline}
+.job h4{font-family:var(--display);font-size:25px;font-weight:600}
+.job .when{font-weight:600;color:var(--muted);font-size:15px;white-space:nowrap}
+.job .org{color:#2F6F66;font-weight:600;margin-top:2px}
+.job .tag{display:inline-block;background:var(--volt);color:var(--night);font-weight:600;font-size:13px;padding:2px 10px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.job ul{margin:12px 0 0 18px;color:#39425C;display:grid;gap:5px;max-width:78ch}
+
+/* ---------- credentials ---------- */
+.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px}
+.creds h3{font-size:24px;padding-bottom:8px;border-bottom:3px solid var(--ink);margin-bottom:14px}
+.creds ul{list-style:none;display:grid;gap:10px}
+.creds li strong{display:block;font-weight:600}
+.creds li span{color:var(--muted);font-size:15px}
+@media(max-width:820px){.creds{grid-template-columns:1fr;gap:32px}}
+
+/* ---------- contact ---------- */
+.contact{background:var(--night);color:#fff;text-align:center;position:relative;overflow:hidden;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+.contact h2{font-size:clamp(36px,6vw,64px);max-width:16ch;margin-inline:auto}
+.contact p{color:#C4CADB;margin-top:10px}
+.contact .btns{justify-content:center}
+.contact svg.wire{position:absolute;left:0;right:0;top:0;width:100%;height:90px;opacity:.5}
+footer{background:var(--night);color:#7F88A3;text-align:center;font-size:14px;padding:0 0 calc(30px + env(safe-area-inset-bottom,0px))}
+
+@media(prefers-reduced-motion:reduce){
+  .flow{animation:none;stroke-dasharray:none!important;opacity:.35}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- shared tower drawing -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tower" viewBox="0 0 100 200">
+      <path id="towerSteel" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <g stroke="#3FA796" stroke-width="3.2" stroke-dasharray="2 1.4">
+        <line x1="5" y1="60" x2="5" y2="74"/><line x1="95" y1="60" x2="95" y2="74"/>
+        <line x1="15" y1="40" x2="15" y2="54"/><line x1="85" y1="40" x2="85" y2="54"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <a class="mark" href="#top"><span>HA</span>Hafiz Abdullah</a>
+    <ul>
+      <li><a href="#hvdc">HVDC project</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="scene" id="scene" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0F1530"/><stop offset=".55" stop-color="#2B2D5E"/><stop offset=".82" stop-color="#6B4A78"/><stop offset="1" stop-color="#C77A5E"/>
+      </linearGradient>
+      <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#FFD27A" stop-opacity=".9"/><stop offset="1" stop-color="#FFD27A" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1440" height="820" fill="url(#sky)"/>
+    <g id="stars" fill="#fff"></g>
+    <circle cx="1040" cy="610" r="260" fill="url(#glow)" opacity=".55"/>
+    <path d="M0 600 L90 560 L170 585 L260 530 L360 575 L470 520 L560 560 L680 505 L790 555 L900 515 L1010 560 L1120 510 L1240 565 L1340 535 L1440 570 L1440 820 L0 820Z" fill="#2E2A55"/>
+    <path d="M0 660 L140 625 L300 650 L460 612 L640 648 L820 618 L1000 655 L1180 622 L1330 650 L1440 632 L1440 820 L0 820Z" fill="#1E2146"/>
+    <path d="M0 720 Q360 690 720 715 T1440 700 L1440 820 L0 820Z" fill="#141A36"/>
+    <g id="wires"></g>
+    <g id="towers" color="#0B1026"></g>
+  </svg>
+
+  <div class="wrap">
+    <h1>Hafiz Abdullah</h1>
+    <p class="role">Transmission line engineer</p>
+    <p class="intro">11 years building high-voltage overhead lines, from 132kV to Pakistan's first ±660kV HVDC link. Now in Taif, Saudi Arabia, ready to lead your next transmission project.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:engr.hafizabdullah@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
+      <a class="btn ghost" href="#hvdc">See the HVDC project</a>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#range">Scroll<i></i></a>
+</header>
+
+<main>
+<section id="range">
+  <div class="wrap">
+    <h2>Every voltage on the ladder</h2>
+    <p class="lead">I've worked on transmission lines at four voltage levels. The higher the voltage, the taller the tower, and the less room for error.</p>
+    <div class="ladder" aria-label="Voltage levels worked on">
+      <div class="rung"><svg style="height:92px" viewBox="0 0 100 200"><use href="#tower"/></svg><div class="kv">132kV</div></div>
+      <div class="rung"><svg style="height:122px" viewBox="0 0 100 200"><use href="#tower"/></svg><div class="kv">220kV</div></div>
+      <div class="rung"><svg style="height:160px" viewBox="0 0 100 200"><use href="#tower"/></svg><div class="kv">500kV</div></div>
+      <div class="rung hvdc"><svg style="height:205px" viewBox="0 0 100 200"><use href="#tower" color="#1A2240"/></svg><div class="kv">±660kV</div></div>
+    </div>
+    <div class="ladder-notes">
+      <p>Double-circuit lines, NESPAK</p>
+      <p>Double-circuit lines and a 220/132kV grid station</p>
+      <p>Single and double circuit, incl. Neelum–Jhelum</p>
+      <p>HVDC Matiari–Lahore</p>
+    </div>
+  </div>
+</section>
+
+<section class="project" id="hvdc">
+  <div class="wrap">
+    <h2>Pakistan's first HVDC line</h2>
+    <p class="lead">The ±660kV Matiari–Lahore line carries power from the south to the country's biggest load centres. I joined in 2020 for the final push: construction, testing, energization and handover.</p>
+
+    <div class="proj-grid">
+      <svg class="route" viewBox="0 0 300 580" role="img" aria-label="Route diagram: Matiari converter station in Sindh to Lahore converter station in Punjab, 878 km with three repeater stations">
+        <path id="routePath" d="M190 480 C 250 400, 120 350, 165 270 S 100 140, 140 60" fill="none" stroke="#8C9AB0" stroke-width="6" stroke-linecap="round"/>
+        <path class="flow" d="M190 480 C 250 400, 120 350, 165 270 S 100 140, 140 60" stroke-width="6" style="stroke-dasharray:18 70;animation-duration:9s;animation-direction:normal"/>
+        <g id="repeaters"></g>
+        <rect x="125" y="36" width="30" height="30" rx="3" fill="#FFC21A"/>
+        <rect x="175" y="466" width="30" height="30" rx="3" fill="#FFC21A"/>
+        <text class="city" x="166" y="46">Lahore</text>
+        <text x="166" y="68">Converter station</text>
+        <text class="city" x="20" y="486">Matiari</text>
+        <text x="20" y="508">Converter station</text>
+        <g transform="translate(20 556)">
+          <circle cx="8" cy="0" r="7" fill="#141B38" stroke="#3FA796" stroke-width="3"/>
+          <text x="22" y="5">Repeater station</text>
+        </g>
+      </svg>
+
+      <div>
+        <div class="plate"><i></i>
+          <h3>Matiari–Lahore HVDC</h3>
+          <dl>
+            <dt>Voltage</dt><dd>±660kV bi-pole</dd>
+            <dt>Line length</dt><dd>878 km</dd>
+            <dt>Towers</dt><dd>1,898</dd>
+            <dt>Capacity</dt><dd>4,000 MW</dd>
+            <dt>Project value</dt><dd>US$1.7B</dd>
+            <dt>Commercial operation</dt><dd>Sept 2021</dd>
+          </dl>
+        </div>
+
+        <div class="did">
+          <h3>My role: Electrical QA/QC Engineer</h3>
+          <ul>
+            <li>QA/QC on foundations, tower erection, stringing and sagging</li>
+            <li>Wrote and ran QA/QC plans, ITPs and inspection checklists for HVDC line works</li>
+            <li>Witnessed testing and commissioning, then raised and closed non-conformities</li>
+            <li>Supported the line through energization to on-schedule commercial operation</li>
+            <li>Coordinated daily with Chinese EPC teams, consultants and the client</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cycle">
+  <div class="wrap">
+    <h2>How a line gets built</h2>
+    <p class="lead">I've supervised and inspected every stage of overhead line construction, from the first foundation to the day power flows.</p>
+    <ol class="steps">
+      <li><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1A2240" stroke-width="2.4" stroke-linejoin="round"><path d="M6 34h36v8H6z"/><path d="M14 34V20M34 34V20M14 20l-3-6M34 20l3-6"/><path d="M6 38h36" stroke="#3FA796"/></svg></div><h3>Foundations</h3><p>Excavation, stubs and concrete</p></li>
+      <li><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1A2240" stroke-width="2.4" stroke-linejoin="round"><path d="M14 44 21 12h6l7 32M17 32h14M19 22h10M17 32l12-10M31 32 19 22M8 16h32"/></svg></div><h3>Tower erection</h3><p>Assembly, bolting and checks</p></li>
+      <li><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1A2240" stroke-width="2.4"><circle cx="14" cy="30" r="9"/><circle cx="14" cy="30" r="3"/><path d="M14 21 C 26 14, 34 12, 44 12" stroke="#FFC21A" stroke-width="3"/><path d="M36 8v8"/></svg></div><h3>Stringing</h3><p>Pulling conductor tower to tower</p></li>
+      <li><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1A2240" stroke-width="2.4"><path d="M6 12v28M42 12v28"/><path d="M6 14 Q24 36 42 14" stroke="#FFC21A" stroke-width="3"/><path d="M24 14v10" stroke-dasharray="2 2"/><path d="m21 21 3 3 3-3"/></svg></div><h3>Sagging</h3><p>Tensioning to design sag</p></li>
+      <li><div class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#1A2240" stroke-width="2.4"><rect x="8" y="10" width="32" height="28" rx="3"/><path d="M14 30a10 10 0 0 1 20 0"/><path d="m24 30 5-7" stroke="#3FA796" stroke-width="3"/></svg></div><h3>Testing</h3><p>Inspections, tests and NCR closure</p></li>
+      <li><div class="ic"><svg viewBox="0 0 48 48"><path d="M27 4 10 27h12l-3 17 19-25H26z" fill="#FFC21A" stroke="#1A2240" stroke-width="2.4" stroke-linejoin="round"/></svg></div><h3>Energization</h3><p>Commissioning and handover</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="career" id="career">
+  <div class="wrap">
+    <h2>From the line to the control room</h2>
+    <p class="lead">My career follows the power grid: nine years building transmission lines, then distribution and SCADA in Saudi Arabia. I understand the equipment behind every alarm.</p>
+
+    <div class="phase">
+      <h3>Distribution and SCADA, Saudi Arabia <small>2024 to now</small></h3>
+      <div class="rail">
+        <article class="job">
+          <svg class="node" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#FFC21A" stroke="#1A2240" stroke-width="2.5"/></svg>
+          <div class="job-head"><h4>SCADA Engineer</h4><span class="when">Nov 2024 – present</span></div>
+          <p class="org">Home Renaissance, Taif</p>
+          <ul>
+            <li>Operate and maintain SCADA-connected RMUs, load break switches and auto-reclosers</li>
+            <li>Configure and troubleshoot smart grid devices and respond to faults from SCADA data</li>
+            <li>Plan preventive maintenance and train technicians</li>
+          </ul>
+        </article>
+        <article class="job">
+          <svg class="node" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#fff" stroke="#1A2240" stroke-width="2.5"/></svg>
+          <div class="job-head"><h4>Electrical Project Engineer</h4><span class="when">Jan 2024 – Nov 2024</span></div>
+          <p class="org">Home Renaissance, Taif</p>
+          <ul>
+            <li>Ran underground cable works for Saudi Electricity Company (SEC)</li>
+            <li>Site surveys, work plans, excavation permits and shutdown planning for jointing</li>
+            <li>Measurement sheets, billing documents and daily progress reports</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <div class="phase">
+      <h3>Transmission lines, Pakistan <small>2014 to 2023</small></h3>
+      <div class="rail">
+        <article class="job">
+          <svg class="node" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#fff" stroke="#1A2240" stroke-width="2.5"/></svg>
+          <div class="job-head"><h4>Electrical QA/QC Engineer <span class="tag">HVDC</span></h4><span class="when">Aug 2020 – Dec 2023</span></div>
+          <p class="org">Hunan Electric Power Company</p>
+          <ul>
+            <li>±660kV Matiari–Lahore HVDC line: 878 km, 1,898 towers, 4,000 MW</li>
+            <li>QA/QC plans, ITPs, inspections, testing and commissioning through commercial operation</li>
+          </ul>
+        </article>
+        <article class="job">
+          <svg class="node" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#fff" stroke="#1A2240" stroke-width="2.5"/></svg>
+          <div class="job-head"><h4>Electrical QA/QC Engineer</h4><span class="when">Feb 2016 – Aug 2020</span></div>
+          <p class="org">NESPAK (National Engineering Services Pakistan)</p>
+          <ul>
+            <li>Five projects: 500kV single and double circuit, 220kV and 132kV double circuit lines, and a 220/132kV grid station</li>
+            <li>Supervised civil, mechanical and electrical works on site</li>
+            <li>Ran site controls: progress reports, charts and contractor measurement sheets for billing</li>
+          </ul>
+        </article>
+        <article class="job">
+          <svg class="node" viewBox="0 0 30 30"><circle cx="15" cy="15" r="12" fill="#fff" stroke="#1A2240" stroke-width="2.5"/></svg>
+          <div class="job-head"><h4>Site Engineer</h4><span class="when">Nov 2014 – Jan 2016</span></div>
+          <p class="org">National Heritage Constructor (NHC)</p>
+          <ul>
+            <li>500kV overhead transmission line for the Neelum–Jhelum Hydropower Project</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <h2>Credentials</h2>
+    <div class="creds">
+      <div>
+        <h3>Education</h3>
+        <ul><li><strong>B.Sc. Electrical Engineering</strong><span>University of Management and Technology, 2010–2014</span></li></ul>
+      </div>
+      <div>
+        <h3>Registration</h3>
+        <ul>
+          <li><strong>Saudi Council of Engineers</strong><span>Member</span></li>
+          <li><strong>Pakistan Engineering Council</strong><span>Registered engineer</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Languages and tools</h3>
+        <ul>
+          <li><strong>English</strong><span>Full professional</span></li>
+          <li><strong>Urdu</strong><span>Native</span></li>
+          <li><strong>Arabic</strong><span>Limited working</span></li>
+          <li><strong>AutoCAD, SCADA systems</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <svg class="wire" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 10 Q360 80 720 10 T1440 10" fill="none" stroke="#8C9AB0" stroke-width="2"/>
+    <path class="flow" d="M0 10 Q360 80 720 10 T1440 10" stroke-width="3" style="stroke-dasharray:14 240;animation-duration:12s"/>
+  </svg>
+  <div class="wrap">
+    <h2>Building a transmission line? Let's talk.</h2>
+    <p>Based in Taif, Saudi Arabia. Open to project manager and project engineer roles.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:engr.hafizabdullah@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
+      <a class="btn ghost" href="tel:+966568379580">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+966 56 837 9580</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/hafizabdullah-841714a9" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H10z"/></svg>LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>© <span id="yr"></span> Hafiz Abdullah</footer>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  // ---- tower steelwork (local 100x200 units) ----
+  const lx=y=>20+(200-y)*22/140, rx=y=>100-lx(y);
+  const lv=[200,170,140,110,85,60];
+  let d="M20 200 L42 60 L45 20 M80 200 L58 60 L55 20 M45 20 L50 8 L55 20 M45 20 L55 20 ";
+  lv.forEach((y,i)=>{ d+=`M${lx(y)} ${y} L${rx(y)} ${y} `;
+    if(i<lv.length-1){const n=lv[i+1]; d+=`M${lx(y)} ${y} L${rx(n)} ${n} M${rx(y)} ${y} L${lx(n)} ${n} `;}});
+  d+="M5 60 L95 60 M5 60 L42 70 M95 60 L58 70 M15 40 L85 40 M15 40 L43.5 48 M85 40 L56.5 48 M43.5 40 L56.5 20 M56.5 40 L43.5 20";
+  document.getElementById("towerSteel").setAttribute("d",d);
+
+  // ---- hero scene ----
+  const stars=document.getElementById("stars");
+  for(let i=0;i<70;i++){const c=document.createElementNS(NS,"circle");
+    c.setAttribute("cx",Math.random()*1440);c.setAttribute("cy",Math.random()*420);
+    c.setAttribute("r",Math.random()*1.2+.3);c.setAttribute("opacity",Math.random()*.7+.2);stars.appendChild(c);}
+
+  const towers=[{x:-40,y:630,s:.45},{x:160,y:640,s:.55},{x:450,y:660,s:.78},{x:820,y:695,s:1.12},{x:1290,y:770,s:1.75},{x:1900,y:860,s:2.6}];
+  const pts=[[50,8],[15,54],[85,54],[5,74],[95,74]];
+  const tg=document.getElementById("towers"), wg=document.getElementById("wires");
+  const P=(t,p)=>[t.x-50*t.s+p[0]*t.s, t.y-200*t.s+p[1]*t.s];
+  towers.forEach(t=>{const u=document.createElementNS(NS,"use");u.setAttribute("href","#tower");u.setAttribute("width",100);u.setAttribute("height",200);
+    u.setAttribute("transform",`translate(${t.x-50*t.s} ${t.y-200*t.s}) scale(${t.s})`);tg.appendChild(u);});
+  for(let i=0;i<towers.length-1;i++){
+    pts.forEach((p,k)=>{
+      const a=P(towers[i],p), b=P(towers[i+1],p);
+      const sag=Math.hypot(b[0]-a[0],b[1]-a[1])*(k===0?.05:.08);
+      const path=`M${a[0]} ${a[1]} Q${(a[0]+b[0])/2} ${(a[1]+b[1])/2+sag*2} ${b[0]} ${b[1]}`;
+      const w=document.createElementNS(NS,"path");w.setAttribute("d",path);w.setAttribute("fill","none");
+      w.setAttribute("stroke",k===0?"#4A5170":"#6A7394");w.setAttribute("stroke-width",(towers[i].s+towers[i+1].s)/2*1.1);wg.appendChild(w);
+      if(k>0){const f=document.createElementNS(NS,"path");f.setAttribute("d",path);f.setAttribute("class","flow");
+        f.setAttribute("stroke-width",(towers[i].s+towers[i+1].s)*1.1);
+        f.style.strokeDasharray=`10 ${260+k*40}`;f.style.animationDuration=`${6+k*1.3}s`;f.style.animationDelay=`-${i*1.7}s`;wg.appendChild(f);}
+    });
+  }
+
+  // ---- repeater stations on route ----
+  const route=document.getElementById("routePath"), rg=document.getElementById("repeaters"), L=route.getTotalLength();
+  [.26,.5,.74].forEach(f=>{const q=route.getPointAtLength(L*f);const c=document.createElementNS(NS,"circle");
+    c.setAttribute("cx",q.x);c.setAttribute("cy",q.y);c.setAttribute("r",8);c.setAttribute("fill","#141B38");
+    c.setAttribute("stroke","#3FA796");c.setAttribute("stroke-width",3);rg.appendChild(c);});
+
+  document.getElementById("yr").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
